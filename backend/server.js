@@ -4,7 +4,8 @@ const MongoStore = require('connect-mongo')(session);
 var bodyParser = require("body-parser");
 const cors = require("cors");
 require('dotenv-defaults').config();
-
+const wakeUpDyno = require('./src/routes/wakeUpDyno.js');
+const DYNO_URL = "https://campus-supply-and-demand.herokuapp.com/"
 // mongoDB connection
 
 const mongoose = require("mongoose");
@@ -85,8 +86,11 @@ app.put('/user/:userId', (req, res) => {
 	);
 });
 
-app.listen(port, () =>
-	console.log(`Example app listening on port ${port}!`),
+
+app.listen(port, () =>{
+	wakeUpDyno(DYNO_URL);
+	console.log(`Example app listening on port ${port}!`);
+	}
 );
 
 app.use((err, req, res, next) => {
