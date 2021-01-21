@@ -1,6 +1,6 @@
 //把API PATH統一列在這裡方便查詢
 //server base URL
-export const BASE_URL = 'https://campus-supply-and-demand.herokuapp.com/';
+export const BASE_URL = 'http://localhost:4000/';
 // 註冊
 export const REGISTER = '/login/register';
 // 登入
