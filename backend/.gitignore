@@ -10,7 +10,7 @@
 /build
 
 # upload
-/public/uploads
+# /public/uploads
 
 # misc
 .env
